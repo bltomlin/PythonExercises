@@ -1,0 +1,6 @@
+string = input()
+new_string = string.replace("!", "")
+double_string = new_string.replace("?", "")
+triple_string = double_string.replace(",", "")
+quad_string = triple_string.replace(".", "")
+print(quad_string.lower())
