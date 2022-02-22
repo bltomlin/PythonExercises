@@ -3,9 +3,14 @@
 dictionary = ['all', 'an', 'and', 'as', 'closely', 'correct', 'equivocal',
               'examine', 'indication', 'is', 'means', 'minutely', 'or', 'scrutinize',
               'sign', 'the', 'to', 'uncertain']
-sentence = input()
-sentence = sentence.split()
+sentence = input().split()
+array = []
 for word in sentence:
     if word in dictionary:
-        sentence.remove(word)
-print(sentence)
+        array.append(word)
+if len(sentence) == len(array):
+    print('OK')
+else:
+    for phrase in sentence:
+        if phrase not in dictionary:
+            print(phrase)
