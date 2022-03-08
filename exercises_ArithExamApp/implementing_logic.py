@@ -3,4 +3,9 @@
 #If there are more or fewer words in the input, print an error: "You need to enter exactly 2 words. Try again!"
 #If everything's good, greet the user personally.
 
-name, surname = input().split()
+try:
+    name, surname = input().split()
+except ValueError:
+    print("You need to enter exactly 2 words. Try again!")
+else:
+    print(" ".join(["Welcome to our party,", name, surname]))
