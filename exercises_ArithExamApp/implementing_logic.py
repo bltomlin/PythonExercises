@@ -4,6 +4,3 @@
 #If everything's good, greet the user personally.
 
 name, surname = input().split()
-try:
-    if name.count() == 1 and surname.count == 1:
-        print('Welcome to our party, ' + name + ' ' + surname)
