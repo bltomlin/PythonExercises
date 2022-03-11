@@ -1,2 +1,2 @@
 # randomPythonExercises
-My repository for doing random Python exercises on the internet to improve my problem solving.
+My repository for doing structured Python exercises on the internet to improve my problem solving, CS fundamentals and debugging skills.
