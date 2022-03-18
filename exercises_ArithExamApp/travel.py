@@ -10,8 +10,6 @@
 
 #Don't forget to close the file!
 
-countries = ['France', 'China', 'Brazil', 'Turkey']
-new_file = open('countries.txt', 'w', encoding='utf-8')
-for country in countries:
-    new_file.write(country + '\n')
+new_file = open('countries.txt', 'a', encoding='utf-8')
+new_file.write('Turkey\n')
 new_file.close()
