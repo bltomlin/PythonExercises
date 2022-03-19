@@ -1,9 +1,9 @@
 # read animals.txt
 # and write animals_new.txt
-animals = open('animals.txt', 'r')
-new_animals = open('new_animals.txt', 'w')
+animals = open('animals.txt', 'r', encoding="utf-8")
 list_animals = animals.readlines()
-for animal in list_animals:
-    new_animals.write(animal.replace('\n', ' '))
-new_animals.close()
 animals.close()
+animals_new = open('animals_new.txt', 'w', encoding="utf-8")
+for animal in list_animals:
+    animals_new.write(animal.replace('\n', ' '))
+animals_new.close()
