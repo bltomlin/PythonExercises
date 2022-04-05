@@ -1,4 +1,7 @@
+import math
+
 a, b, c = float(input()), float(input()), float(input())
 
-answer = (a + b + c) / 2
-print(answer)
+p = (a + b + c) / 2
+s = math.sqrt(p * (p - a) * (p - b) * (p - c))
+print(s)
