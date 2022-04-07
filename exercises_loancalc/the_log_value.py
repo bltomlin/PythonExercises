@@ -8,6 +8,11 @@ Use the function log() from the math module. With one argument, it returns the n
 Print the result rounded to 2 decimal places.
 """
 
-user_input, second_input = int(input()), int(input())
-answer =  math.log(user_input, second_input)
+import math
+
+user_input, second_input = float(input()), float(input())
+if second_input <= 1:
+    answer = math.log(user_input)
+else:
+    answer = math.log(user_input, second_input)
 print(round(answer, 2))
