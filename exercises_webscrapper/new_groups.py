@@ -9,11 +9,10 @@ For unfilled groups, assign the value None. Finally, print the filled dictionary
 
 groups = ['1A', '1B', '1C', '2A', '2B', '2C', '3A', '3B', '3C']
 
-number_of_groups = int(input())
-i = 0
-while number_of_groups != 0:
-	number = input()
-	groups[i].append(number)
-	i += 1
-	number_of_groups -= 1
-print(groups)
+dict_group = dict.fromkeys(groups)
+for i in range(int(input())):
+    value = input()
+    dict_group = {key: value for key in groups}
+print(dict_group)
+
+
