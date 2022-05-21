@@ -10,9 +10,24 @@ For unfilled groups, assign the value None. Finally, print the filled dictionary
 groups = ['1A', '1B', '1C', '2A', '2B', '2C', '3A', '3B', '3C']
 
 dict_group = dict.fromkeys(groups)
+num = '1'
+letter = 'A'
 for i in range(int(input())):
     value = input()
-    dict_group = {key: value for key in groups}
+    if i in (0, 3, 6):
+        letter = 'A'
+    if i in (1, 4, 7):
+        letter = 'B'
+    if i in (2, 5, 8):
+        letter = 'C'
+    if i == 3:
+        num = '2'
+    if i == 6:
+        num = '3'
+    dict_key = str(num) + letter
+    another_dictionary = {dict_key: int(value)}
+    dict_group.update(another_dictionary)
 print(dict_group)
+
 
 
