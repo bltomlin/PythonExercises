@@ -21,13 +21,11 @@ potential_dates = [{"name": "Julia", "gender": "female", "age": 29,
 
 def select_dates(potential_dates):
     name_list = []
-    art_true = False
     for obj in potential_dates:
         for art in obj['hobbies']:
             if art == 'art':
-                art_true = True
-                if int(obj['age']) >= 30 and art_true ==True and obj['city'] == 'Berlin':
+                if int(obj['age']) >= 30 and obj['city'] == 'Berlin':
                     name_list.append(obj['name'])
-    print(", ".join(name_list))
+    return ", ".join(name_list)
 
 select_dates(potential_dates)
