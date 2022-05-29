@@ -26,8 +26,8 @@ def select_dates(potential_dates):
         for art in obj['hobbies']:
             if art == 'art':
                 art_true = True
-        if int(obj['age']) >= 30 and art_true ==True and obj['city'] == 'Berlin':
-            name_list.append(obj['name'])
+                if int(obj['age']) >= 30 and art_true ==True and obj['city'] == 'Berlin':
+                    name_list.append(obj['name'])
     print(", ".join(name_list))
 
 select_dates(potential_dates)
