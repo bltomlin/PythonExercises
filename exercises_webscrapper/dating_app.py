@@ -1,6 +1,11 @@
 
 #There's a list with info about people who search for a date. For each person, a few parameters are specified: their gender, age, hobbies, and city.
 
+from operator import contains
+from unicodedata import name
+from xmlrpc.client import boolean
+
+
 potential_dates = [{"name": "Julia", "gender": "female", "age": 29,
                     "hobbies": ["jogging", "music"], "city": "Hamburg"},
                    {"name": "Sasha", "gender": "male", "age": 18,
@@ -15,7 +20,14 @@ potential_dates = [{"name": "Julia", "gender": "female", "age": 29,
 
 
 def select_dates(potential_dates):
-    names = ""
-    for value in potential_dates:
-        if value > 30:
-            
+    name_list = []
+    art_true = False
+    for obj in potential_dates:
+        for art in obj['hobbies']:
+            if art == 'art':
+                art_true = True
+        if int(obj['age']) >= 30 and art_true ==True and obj['city'] == 'Berlin':
+            name_list.append(obj['name'])
+    print(", ".join(name_list))
+
+select_dates(potential_dates)
