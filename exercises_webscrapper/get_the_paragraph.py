@@ -6,10 +6,15 @@ import requests
 
 from bs4 import BeautifulSoup
 
-word = str(input())
+word = input()
 r = requests.get(input())
 soup = BeautifulSoup(r.content, 'html.parser')
 paragraphs = soup.find_all('p')
+y = soup.find(word)
 for p in paragraphs:
-    if p.find(word):
-        print(p.text)
+    text = p.text
+    txt = text.split()
+    for split_txt in txt:
+        if split_txt == word or split_txt == (word + "."):
+            print(p.text)
+            exit()
