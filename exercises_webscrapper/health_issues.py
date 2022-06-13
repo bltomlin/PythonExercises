@@ -18,13 +18,14 @@ from bs4 import BeautifulSoup
 
 letter = 'S'
 url = input()
-count = 0
 thislist = []
 r = requests.get(url)
 soup = BeautifulSoup(r.content, 'html.parser')
 paragraphs = soup.find_all('a')
 for p in paragraphs:
     text = p.text
-    if (paragraphs.get('href')).find('topics') and len(text) > 1 and (paragraphs.get('href')).find('entity'):
-        thislist.append(text)
+    if text.startswith(letter) and len(text) > 1:
+        if 'topics' in p.get('href') or 'entity' in p.get('href'):
+            thislist.append(text)
 print(thislist)
+
